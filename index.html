@@ -1,184 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f3e5d7">
-<title>Danish & Rehnuma — Nikah Invitation</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f3e4d7">
+<title>Danish & Rehnuma | Nikah Invitation</title>
 <style>
-:root{
-  --paper:#f4e7da; --paper-light:#fff8ef; --burgundy:#6e2027;
-  --wine:#7d2932; --rose:#9a5555; --gold:#b8955b; --gold-light:#e0c79c;
-  --ink:#5e2526; --muted:#8a6256;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#e6d4c4;color:var(--ink);font-family:Georgia,"Times New Roman",serif}
-button,a{-webkit-tap-highlight-color:transparent}
-.invite{width:min(100%,600px);margin:0 auto;min-height:100vh;background:var(--paper);overflow:hidden;box-shadow:0 0 40px #4a201b24}
-.cover{
-  min-height:100svh;position:relative;display:flex;align-items:center;justify-content:center;
-  padding:36px 22px;background:
-  radial-gradient(ellipse at 50% 35%,#fffaf2 0%,#f3e2d3 65%,#e7d0bd 100%);
-  transition:opacity .8s,transform .8s;
-}
-.cover:before,.cover:after{content:"";position:absolute;inset:13px;border:1px solid var(--gold);pointer-events:none}
-.cover:after{inset:19px;border-color:#b8955b80}
-.cover-frame{width:100%;max-width:430px;text-align:center;position:relative;padding:58px 22px 52px;border:1px solid #b8955b;clip-path:polygon(0 5%,8% 5%,8% 0,92% 0,92% 5%,100% 5%,100% 95%,92% 95%,92% 100%,8% 100%,8% 95%,0 95%)}
-.corner{position:absolute;color:var(--gold);font-size:26px;opacity:.85}
-.corner.tl{top:15px;left:17px}.corner.tr{top:15px;right:17px}.corner.bl{bottom:15px;left:17px}.corner.br{bottom:15px;right:17px}
-.floral{color:var(--wine);font-size:30px;letter-spacing:7px;line-height:1.5}
-.arabic{font-size:23px;color:var(--burgundy);line-height:1.8;margin:14px 0}
-.kicker{font:10px/1.8 Arial,sans-serif;letter-spacing:2.6px;color:var(--muted)}
-.cover h1{font-size:clamp(38px,10vw,58px);line-height:1.05;font-weight:normal;color:var(--burgundy);margin:24px 0 10px}
-.cover .sub{font-style:italic;color:var(--muted);font-size:16px;line-height:1.8}
-.open-btn,.map-btn,.save-btn{display:inline-block;border:1px solid var(--burgundy);background:var(--burgundy);color:#fff5e9;text-decoration:none;padding:14px 22px;font:11px Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:2px}
-.open-btn{margin-top:24px;box-shadow:5px 5px 0 #b8955b55}
-.open-btn:hover,.map-btn:hover,.save-btn:hover{background:#4f171d}
-.ribbon{height:68px;background:linear-gradient(180deg,#8b343b,#6c2029 48%,#8a333a);position:relative;margin:0 -22px 26px;box-shadow:0 5px 12px #51201d25}
-.ribbon:before,.ribbon:after{content:"";position:absolute;top:0;width:55px;height:116px;background:linear-gradient(90deg,#6d2028,#a45459,#76242c);z-index:0}
-.ribbon:before{left:18%;transform:rotate(13deg);clip-path:polygon(0 0,100% 0,100% 100%,50% 83%,0 100%)}
-.ribbon:after{right:18%;transform:rotate(-13deg);clip-path:polygon(0 0,100% 0,100% 100%,50% 83%,0 100%)}
-.seal-row{display:flex;justify-content:center;gap:12px;position:relative;z-index:1;margin-top:-51px}
-.seal{height:58px;width:58px;border-radius:50%;background:radial-gradient(circle,#fff9ee,#e4d0b5);border:3px solid #e6d2b8;box-shadow:0 2px 6px #4a1e1d30;display:grid;place-items:center;color:var(--gold);font-size:25px}
-.hidden{display:none!important}
-.main{padding:22px 24px 40px;animation:rise .9s ease both}
-.paper-card{position:relative;background:rgba(255,249,241,.62);border:1px solid var(--gold);outline:1px solid #b8955b55;outline-offset:5px;padding:34px 22px;margin:15px 0 30px;text-align:center}
-.paper-card:before,.paper-card:after{content:"✿ ❧";position:absolute;color:var(--wine);font-size:20px;letter-spacing:3px;opacity:.9}
-.paper-card:before{top:8px;left:8px}.paper-card:after{bottom:8px;right:8px;transform:rotate(180deg)}
-.main h2{font-size:clamp(34px,8vw,47px);font-weight:normal;color:var(--burgundy);line-height:1.1;margin:14px 0}
-.main h3{font-size:23px;font-weight:normal;color:var(--burgundy);margin:10px 0}
-.body-copy{font-size:15px;line-height:1.9;color:#6c3a35;max-width:370px;margin:16px auto}
-.amp{font-size:25px;color:var(--wine);margin:5px}
-.quote{font-size:13px;line-height:1.8;letter-spacing:2px;color:var(--burgundy);margin:25px 0 4px}
-.quote-ref{font:10px Arial,sans-serif;letter-spacing:2px;color:var(--muted)}
-.divider{color:var(--gold);letter-spacing:6px;margin:20px 0}
-.date-box{padding:22px 12px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);margin:24px 0}
-.date-big{font-size:29px;color:var(--burgundy);margin:8px 0}
-.date-small{font:12px Arial,sans-serif;letter-spacing:2px;color:var(--muted)}
-.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:18px 0 10px}
-.time-unit{border:1px solid #c5a779;background:#fff8ef;padding:14px 3px 12px}
-.time-unit strong{display:block;font:26px Arial,sans-serif;color:var(--burgundy)}
-.time-unit span{display:block;font:9px Arial,sans-serif;letter-spacing:1px;color:var(--muted);margin-top:7px;text-transform:uppercase}
-.venue{background:#ead8c7;border:1px solid #c5a779;padding:24px 15px;margin-top:25px}
-.venue-icon{font-size:28px;color:var(--burgundy)}
-.venue p{font-size:14px;line-height:1.8}
-.map-btn{margin-top:12px}
-.footer{padding:22px 8px;text-align:center;line-height:1.8}
-.footer .family{font-size:25px;color:var(--burgundy);font-style:italic}
-.footer small{font:10px Arial,sans-serif;letter-spacing:2px;color:var(--muted)}
-.cover-leaving{opacity:0;transform:scale(1.03);pointer-events:none}
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@keyframes shimmer{0%,100%{opacity:.75}50%{opacity:1}}
-.floral{animation:shimmer 4s ease-in-out infinite}
-@media(max-width:380px){.main{padding:16px 18px 30px}.paper-card{padding:30px 15px}.countdown{gap:4px}.time-unit strong{font-size:22px}.time-unit span{font-size:8px}.cover-frame{padding-left:15px;padding-right:15px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
-</style>
-</head>
-<body>
-<div class="invite">
-  <section class="cover" id="cover">
-    <div class="cover-frame">
-      <span class="corner tl">❧</span><span class="corner tr">❧</span>
-      <span class="corner bl">❧</span><span class="corner br">❧</span>
-      <div class="floral">✿ ❧ ✿</div>
-      <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-      <p class="kicker">A BEAUTIFUL BEGINNING</p>
-      <h1>You're<br>Invited</h1>
-      <p class="sub">To celebrate a blessed Nikah</p>
-      <div class="ribbon"></div>
-      <div class="seal-row"><div class="seal">❧</div><div class="seal">✿</div></div>
-      <p class="sub" style="margin-top:30px">Danish &amp; Rehnuma</p>
-      <button class="open-btn" id="openBtn">Open Invitation ✦</button>
-    </div>
-  </section>
-
-  <main class="main hidden" id="mainInvite">
-    <section class="paper-card">
-      <div class="floral">✿ ❧ ✿</div>
-      <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-      <p class="body-copy">With the blessings of Allah,<br>we joyfully invite you to the Nikah ceremony of</p>
-      <h2>Danish<br>Mansuri</h2>
-      <div class="amp">&amp;</div>
-      <h2>Rehnuma</h2>
-      <div class="divider">──── ♡ ────</div>
-      <p class="quote">“AND WE CREATED<br>YOU IN PAIRS.”</p>
-      <p class="quote-ref">QURAN [78:8]</p>
-    </section>
-
-    <section class="paper-card">
-      <div class="floral">❧ ✿ ❧</div>
-      <p class="kicker">SAVE THE DATE</p>
-      <h2 style="font-size:clamp(38px,10vw,54px)">Save<br>The Date</h2>
-      <div class="date-box">
-        <p class="date-big">18 · 11 · 2026</p>
-        <p class="date-small">WEDNESDAY · 3:00 PM IST</p>
-      </div>
-      <p class="body-copy">A new chapter, a lifetime of love,<br>and a day made more beautiful with you.</p>
-      <p class="kicker">COUNTING DOWN TO THE NIKAH</p>
-      <div class="countdown" id="countdown" aria-live="polite">
-        <div class="time-unit"><strong id="days">--</strong><span>Days</span></div>
-        <div class="time-unit"><strong id="hours">--</strong><span>Hours</span></div>
-        <div class="time-unit"><strong id="minutes">--</strong><span>Minutes</span></div>
-        <div class="time-unit"><strong id="seconds">--</strong><span>Seconds</span></div>
-      </div>
-    </section>
-
-    <section class="paper-card">
-      <div class="floral">✿ ❧ ✿</div>
-      <p class="kicker">WITH LOVE &amp; DUAS</p>
-      <h2 style="font-size:36px">Join Us</h2>
-      <div class="venue">
-        <div class="venue-icon">⌖</div>
-        <h3>Our Nikah Venue</h3>
-        <p><strong>Neem Chok, Kayampur</strong><br>District Mandsaur, Madhya Pradesh</p>
-        <a class="map-btn" href="https://maps.app.goo.gl/KXPjCcB1zY2JxA9EA" target="_blank" rel="noopener noreferrer">GET EXACT DIRECTIONS ↗</a>
-      </div>
-      <div class="divider">✦ ❈ ✦</div>
-      <p class="body-copy">Your presence and duas will make our special day even more memorable.</p>
-      <p class="family">Mansuri Family</p>
-      <small>WITH LOVE, PRAYERS &amp; BLESSINGS</small>
-      <div class="floral" style="margin-top:22px">❧ ✿ ❧</div>
-    </section>
-  </main>
-</div>
-
+:root{--paper:#f4e7da;--cream:#fff8ef;--burgundy:#70232b;--wine:#8a343b;--gold:#b8955b;--ink:#642b2b;--muted:#8d665b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#dfcbbb;color:var(--ink);font-family:Georgia,'Times New Roman',serif}.site{width:min(100%,620px);margin:auto;min-height:100vh;background:var(--paper);overflow:hidden;box-shadow:0 0 45px #3b171b20}.cover{min-height:100svh;position:relative;display:flex;align-items:center;justify-content:center;padding:32px 22px;background:radial-gradient(ellipse at 50% 38%,#fffaf3 0%,#f3e2d3 62%,#e4cbbb 100%);transition:opacity .8s,transform .8s}.cover:before,.cover:after{content:'';position:absolute;inset:12px;border:1px solid var(--gold);pointer-events:none}.cover:after{inset:19px;border-color:#b8955b75}.frame{width:100%;max-width:430px;position:relative;text-align:center;padding:48px 20px 40px;border:1px solid #b8955b;outline:1px solid #b8955b55;outline-offset:5px}.corner{position:absolute;color:var(--gold);font-size:27px}.tl{top:12px;left:12px}.tr{top:12px;right:12px}.bl{bottom:12px;left:12px}.br{bottom:12px;right:12px}.flowers{font-size:30px;letter-spacing:8px;color:var(--wine);margin:10px 0;animation:glow 3s ease-in-out infinite}.arabic{font-size:22px;color:var(--burgundy);line-height:1.8;margin:12px 0}.kicker{font:10px/1.8 Arial,sans-serif;letter-spacing:2.5px;color:var(--muted)}h1{font-size:clamp(42px,10vw,58px);font-weight:normal;line-height:1.08;color:var(--burgundy);margin:18px 0 8px}.sub{font-size:16px;line-height:1.8;color:var(--muted);font-style:italic}.btn{display:inline-block;border:1px solid var(--burgundy);background:var(--burgundy);color:#fff6ec;text-decoration:none;padding:14px 22px;font:11px Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:2px;box-shadow:4px 4px 0 #b8955b55;transition:transform .25s}.btn:hover{transform:translateY(-2px);background:#4f171e}.ribbon{height:58px;margin:24px -20px 0;position:relative;background:linear-gradient(180deg,#9d4c52,#70232b 48%,#8b343b);box-shadow:0 5px 12px #51201d25}.ribbon:before,.ribbon:after{content:'';position:absolute;top:20px;width:47px;height:92px;background:linear-gradient(90deg,#6d2028,#a45459,#76242c);z-index:0}.ribbon:before{left:16%;transform:rotate(13deg);clip-path:polygon(0 0,100% 0,100% 100%,50% 83%,0 100%)}.ribbon:after{right:16%;transform:rotate(-13deg);clip-path:polygon(0 0,100% 0,100% 100%,50% 83%,0 100%)}.seals{display:flex;justify-content:center;gap:12px;position:relative;z-index:1;margin-top:-28px}.seal{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#fff9ee,#e1cbb0);border:3px double #c6a36e;color:var(--gold);font-size:24px;box-shadow:0 3px 8px #4a1e1d28}.hidden{display:none!important}.main{padding:22px 23px 35px;animation:fadeUp .9s ease both}.card{position:relative;text-align:center;background:rgba(255,249,241,.68);border:1px solid var(--gold);outline:1px solid #b8955b55;outline-offset:4px;padding:31px 19px;margin:12px 0 28px;overflow:hidden}.card:before,.card:after{position:absolute;color:var(--wine);font-size:23px;pointer-events:none}.card:before{content:'✿ ❧';top:8px;left:8px}.card:after{content:'❧ ✿';bottom:8px;right:8px}.card h2{font-size:clamp(34px,8vw,48px);font-weight:normal;line-height:1.12;color:var(--burgundy);margin:12px 0}.card h3{font-size:23px;font-weight:normal;color:var(--burgundy);margin:10px 0}.copy{max-width:390px;margin:16px auto;font-size:15px;line-height:1.9;color:#6c3a35}.amp{font-size:25px;color:var(--wine);margin:6px}.divider{color:var(--gold);letter-spacing:5px;margin:20px 0}.quote{font-size:13px;line-height:1.9;letter-spacing:2px;color:var(--burgundy);margin:23px 0 3px}.quote-ref{font:10px Arial,sans-serif;letter-spacing:2px;color:var(--muted)}.datebox{padding:20px 8px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);margin:22px 0}.datebig{font-size:29px;color:var(--burgundy);margin:8px 0}.datesmall{font:12px Arial,sans-serif;letter-spacing:2px;color:var(--muted)}.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:18px 0 8px}.time{border:1px solid #c5a779;background:#fff8ef;padding:13px 2px 11px}.time strong{display:block;font:25px Arial,sans-serif;color:var(--burgundy)}.time span{display:block;font:9px Arial,sans-serif;letter-spacing:1px;color:var(--muted);margin-top:7px;text-transform:uppercase}.venue{background:#ead8c7;border:1px solid #c5a779;padding:22px 13px;margin-top:23px}.venue p{font-size:14px;line-height:1.8}.family{font-size:25px;color:var(--burgundy);font-style:italic}.footnote{font:10px Arial,sans-serif;letter-spacing:2px;color:var(--muted)}
+#surprise{display:none;position:fixed;inset:0;z-index:20;align-items:center;justify-content:center;padding:18px;background:#301216ef;overflow:hidden}#surprise.show{display:flex;animation:veilIn .65s ease both}.surprise-card{position:relative;width:min(100%,440px);max-height:92svh;overflow:auto;text-align:center;padding:38px 23px 30px;background:linear-gradient(145deg,#fff8ee,#efd8c7);border:1px solid var(--gold);outline:1px solid #b8955b;outline-offset:5px;box-shadow:0 18px 70px #12080a66;animation:cardPop .85s cubic-bezier(.18,.8,.25,1.2) both}.surprise-card:before,.surprise-card:after{content:'✿ ❧ ✿';position:absolute;color:var(--wine);font-size:20px;letter-spacing:5px}.surprise-card:before{top:9px;left:9px}.surprise-card:after{bottom:9px;right:9px}.surprise-card h2{font-size:clamp(35px,9vw,48px);font-weight:normal;color:var(--burgundy);margin:12px 0}.surprise-card p{font-size:15px;line-height:1.8;color:#6c3a35}.heart{font-size:34px;color:var(--wine);animation:heartbeat 1.4s ease-in-out infinite}.continue{margin-top:10px;background:transparent;color:var(--burgundy);border:1px solid var(--gold);padding:12px 20px;font:11px Arial,sans-serif;letter-spacing:1.4px;cursor:pointer}.petal{position:fixed;top:-35px;z-index:25;pointer-events:none;color:#8d3039;text-shadow:0 2px 3px #4e202022;animation:fall linear forwards;opacity:.9}.petal.gold{color:#b8955b}.petal.cream{color:#fff0df}.sparkles{position:absolute;inset:0;overflow:hidden;pointer-events:none}.spark{position:absolute;color:#c9a15d;animation:twinkle 1.8s ease-in-out infinite}@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(540deg);opacity:.12}}@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.25)}}@keyframes veilIn{from{opacity:0}to{opacity:1}}@keyframes cardPop{from{opacity:0;transform:translateY(30px) scale(.88)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes heartbeat{0%,100%{transform:scale(1)}15%{transform:scale(1.14)}30%{transform:scale(1)}45%{transform:scale(1.1)}}@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes glow{0%,100%{opacity:.72}50%{opacity:1}}@media(max-width:380px){.main{padding:16px 17px 28px}.card{padding:29px 13px}.time{padding:11px 1px}.time strong{font-size:21px}.time span{font-size:8px}.frame{padding-left:14px;padding-right:14px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style></head><body>
+<div class="site">
+<section class="cover" id="cover"><div class="frame"><span class="corner tl">❧</span><span class="corner tr">❧</span><span class="corner bl">❧</span><span class="corner br">❧</span><div class="flowers">✿ ❧ ✿</div><p class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p><p class="kicker">A BEAUTIFUL BEGINNING</p><h1>You're<br>Invited</h1><p class="sub">To celebrate a blessed Nikah</p><div class="ribbon"></div><div class="seals"><div class="seal">❧</div><div class="seal">✿</div></div><p class="sub" style="margin-top:28px">Danish &amp; Rehnuma</p><p class="kicker">18 NOVEMBER 2026 · 3:00 PM</p><button class="btn" id="openBtn" type="button">Open Invitation ✦</button></div></section>
+<main class="main hidden" id="mainInvite"><section class="card"><div class="flowers">✿ ❧ ✿</div><p class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p><p class="copy">With the blessings of Allah,<br>we joyfully invite you to the Nikah ceremony of</p><h2>Danish</h2><div class="amp">&amp;</div><h2>Rehnuma</h2><div class="divider">──── ♡ ────</div><p class="quote">“AND WE CREATED<br>YOU IN PAIRS.”</p><p class="quote-ref">QURAN [78:8]</p></section>
+<section class="card"><div class="flowers">❧ ✿ ❧</div><p class="kicker">SAVE THE DATE</p><h2 style="font-size:clamp(38px,10vw,54px)">Save<br>The Date</h2><div class="datebox"><p class="datebig">18 · 11 · 2026</p><p class="datesmall">WEDNESDAY · 3:00 PM IST</p></div><p class="copy">A new chapter, a lifetime of love,<br>and a day made more beautiful with you.</p><p class="kicker">COUNTING DOWN TO THE NIKAH</p><div class="countdown" id="countdown" aria-live="polite"><div class="time"><strong id="days">--</strong><span>Days</span></div><div class="time"><strong id="hours">--</strong><span>Hours</span></div><div class="time"><strong id="minutes">--</strong><span>Minutes</span></div><div class="time"><strong id="seconds">--</strong><span>Seconds</span></div></div></section>
+<section class="card"><div class="flowers">✿ ❧ ✿</div><p class="kicker">WITH LOVE &amp; DUAS</p><h2 style="font-size:36px">Join Us</h2><div class="venue"><div style="font-size:28px;color:var(--burgundy)">⌖</div><h3>Our Nikah Venue</h3><p><strong>Neem Chok, Kayampur</strong><br>District Mandsaur, Madhya Pradesh</p><a class="btn" href="https://maps.app.goo.gl/KXPjCcB1zY2JxA9EA" target="_blank" rel="noopener noreferrer">Get Exact Directions ↗</a></div><div class="divider">✦ ❈ ✦</div><p class="copy">Your presence and duas will make our special day even more memorable.</p><p class="family">Mansuri Family</p><p class="footnote">WITH LOVE, PRAYERS &amp; BLESSINGS</p><div class="flowers" style="margin-top:22px">❧ ✿ ❧</div></section></main></div>
+<div id="surprise" role="dialog" aria-modal="true" aria-labelledby="surpriseTitle"><div class="sparkles" id="sparkles"></div><section class="surprise-card"><div class="flowers">✿ ❧ ✿</div><p class="kicker">A MOMENT OF LOVE</p><div class="heart">♥</div><h2 id="surpriseTitle">Danish<br>&amp; Rehnuma</h2><p>Two hearts, one beautiful promise.<br>May Allah bless this new journey with love, peace and barakah.</p><div class="divider">──── ✦ ────</div><p class="kicker">18 NOVEMBER 2026 · 3:00 PM</p><button class="continue" id="continueBtn" type="button">CONTINUE TO INVITATION ↓</button></section></div>
 <script>
-(function(){
-  const cover = document.getElementById('cover');
-  const main = document.getElementById('mainInvite');
-  document.getElementById('openBtn').addEventListener('click', function(){
-    cover.classList.add('cover-leaving');
-    window.setTimeout(function(){
-      cover.classList.add('hidden');
-      main.classList.remove('hidden');
-      main.scrollIntoView({behavior:'smooth',block:'start'});
-    },650);
-  });
-
-  // 18 November 2026 at 3:00 PM India Standard Time
-  const target = new Date('2026-11-18T15:00:00+05:30').getTime();
-  const countdown = document.getElementById('countdown');
-  let timer;
-
-  function updateCountdown(){
-    const diff = target - Date.now();
-    if(diff <= 0){
-      clearInterval(timer);
-      countdown.innerHTML = '<p style="grid-column:1/-1;color:#6e2027;line-height:1.8">Nikah Mubarak! May Allah bless this beautiful union.</p>';
-      return;
-    }
-    const vals = {
-      days: Math.floor(diff / 86400000),
-      hours: Math.floor((diff % 86400000) / 3600000),
-      minutes: Math.floor((diff % 3600000) / 60000),
-      seconds: Math.floor((diff % 60000) / 1000)
-    };
-    Object.keys(vals).forEach(k => document.getElementById(k).textContent = vals[k]);
-  }
-  updateCountdown();
-  timer = setInterval(updateCountdown,1000);
+(function(){const cover=document.getElementById('cover'),main=document.getElementById('mainInvite'),surprise=document.getElementById('surprise');let opened=false;
+function petals(n){const colors=['petal','petal gold','petal cream'],symbols=['✿','❀','❁','✧'];for(let i=0;i<n;i++){const p=document.createElement('span');p.className=colors[Math.floor(Math.random()*colors.length)];p.textContent=symbols[Math.floor(Math.random()*symbols.length)];p.style.left=Math.random()*100+'vw';p.style.fontSize=14+Math.random()*19+'px';p.style.setProperty('--drift',(Math.random()-.5)*180+'px');p.style.animationDuration=4+Math.random()*5+'s';p.style.animationDelay=Math.random()*.7+'s';document.body.appendChild(p);p.addEventListener('animationend',()=>p.remove(),{once:true});}}
+function sparkles(){const area=document.getElementById('sparkles');for(let i=0;i<22;i++){const s=document.createElement('span');s.className='spark';s.textContent='✦';s.style.left=5+Math.random()*90+'%';s.style.top=5+Math.random()*90+'%';s.style.fontSize=9+Math.random()*12+'px';s.style.animationDelay=Math.random()*2+'s';area.appendChild(s);}}
+document.getElementById('openBtn').addEventListener('click',function(){if(opened)return;opened=true;petals(70);sparkles();cover.style.opacity='0';cover.style.transform='scale(1.04)';setTimeout(()=>{cover.classList.add('hidden');surprise.classList.add('show');},500);});
+document.getElementById('continueBtn').addEventListener('click',function(){surprise.classList.remove('show');surprise.style.display='none';main.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});petals(32);});
+const target=new Date('2026-11-18T15:00:00+05:30').getTime(),countdown=document.getElementById('countdown');let timer;function update(){const d=target-Date.now();if(d<=0){clearInterval(timer);countdown.innerHTML='<p style="grid-column:1/-1;color:#70232b;line-height:1.8">Nikah Mubarak! May Allah bless this beautiful union.</p>';return;}const v={days:Math.floor(d/86400000),hours:Math.floor(d%86400000/3600000),minutes:Math.floor(d%3600000/60000),seconds:Math.floor(d%60000/1000)};Object.keys(v).forEach(k=>document.getElementById(k).textContent=v[k]);}update();timer=setInterval(update,1000);
 })();
-</script>
-</body>
-</html>
+</script></body></html>
