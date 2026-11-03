@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f3e5d7">
+<title>Danish & Rehnuma — Nikah Invitation</title>
+<style>
+:root{
+  --paper:#f4e7da; --paper-light:#fff8ef; --burgundy:#6e2027;
+  --wine:#7d2932; --rose:#9a5555; --gold:#b8955b; --gold-light:#e0c79c;
+  --ink:#5e2526; --muted:#8a6256;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#e6d4c4;color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+button,a{-webkit-tap-highlight-color:transparent}
+.invite{width:min(100%,600px);margin:0 auto;min-height:100vh;background:var(--paper);overflow:hidden;box-shadow:0 0 40px #4a201b24}
+.cover{
+  min-height:100svh;position:relative;display:flex;align-items:center;justify-content:center;
+  padding:36px 22px;background:
+  radial-gradient(ellipse at 50% 35%,#fffaf2 0%,#f3e2d3 65%,#e7d0bd 100%);
+  transition:opacity .8s,transform .8s;
+}
+.cover:before,.cover:after{content:"";position:absolute;inset:13px;border:1px solid var(--gold);pointer-events:none}
+.cover:after{inset:19px;border-color:#b8955b80}
+.cover-frame{width:100%;max-width:430px;text-align:center;position:relative;padding:58px 22px 52px;border:1px solid #b8955b;clip-path:polygon(0 5%,8% 5%,8% 0,92% 0,92% 5%,100% 5%,100% 95%,92% 95%,92% 100%,8% 100%,8% 95%,0 95%)}
+.corner{position:absolute;color:var(--gold);font-size:26px;opacity:.85}
+.corner.tl{top:15px;left:17px}.corner.tr{top:15px;right:17px}.corner.bl{bottom:15px;left:17px}.corner.br{bottom:15px;right:17px}
+.floral{color:var(--wine);font-size:30px;letter-spacing:7px;line-height:1.5}
+.arabic{font-size:23px;color:var(--burgundy);line-height:1.8;margin:14px 0}
+.kicker{font:10px/1.8 Arial,sans-serif;letter-spacing:2.6px;color:var(--muted)}
+.cover h1{font-size:clamp(38px,10vw,58px);line-height:1.05;font-weight:normal;color:var(--burgundy);margin:24px 0 10px}
+.cover .sub{font-style:italic;color:var(--muted);font-size:16px;line-height:1.8}
+.open-btn,.map-btn,.save-btn{display:inline-block;border:1px solid var(--burgundy);background:var(--burgundy);color:#fff5e9;text-decoration:none;padding:14px 22px;font:11px Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:2px}
+.open-btn{margin-top:24px;box-shadow:5px 5px 0 #b8955b55}
+.open-btn:hover,.map-btn:hover,.save-btn:hover{background:#4f171d}
+.ribbon{height:68px;background:linear-gradient(180deg,#8b343b,#6c2029 48%,#8a333a);position:relative;margin:0 -22px 26px;box-shadow:0 5px 12px #51201d25}
+.ribbon:before,.ribbon:after{content:"";position:absolute;top:0;width:55px;height:116px;background:linear-gradient(90deg,#6d2028,#a45459,#76242c);z-index:0}
+.ribbon:before{left:18%;transform:rotate(13deg);clip-path:polygon(0 0,100% 0,100% 100%,50% 83%,0 100%)}
+.ribbon:after{right:18%;transform:rotate(-13deg);clip-path:polygon(0 0,100% 0,100% 100%,50% 83%,0 100%)}
+.seal-row{display:flex;justify-content:center;gap:12px;position:relative;z-index:1;margin-top:-51px}
+.seal{height:58px;width:58px;border-radius:50%;background:radial-gradient(circle,#fff9ee,#e4d0b5);border:3px solid #e6d2b8;box-shadow:0 2px 6px #4a1e1d30;display:grid;place-items:center;color:var(--gold);font-size:25px}
+.hidden{display:none!important}
+.main{padding:22px 24px 40px;animation:rise .9s ease both}
+.paper-card{position:relative;background:rgba(255,249,241,.62);border:1px solid var(--gold);outline:1px solid #b8955b55;outline-offset:5px;padding:34px 22px;margin:15px 0 30px;text-align:center}
+.paper-card:before,.paper-card:after{content:"✿ ❧";position:absolute;color:var(--wine);font-size:20px;letter-spacing:3px;opacity:.9}
+.paper-card:before{top:8px;left:8px}.paper-card:after{bottom:8px;right:8px;transform:rotate(180deg)}
+.main h2{font-size:clamp(34px,8vw,47px);font-weight:normal;color:var(--burgundy);line-height:1.1;margin:14px 0}
+.main h3{font-size:23px;font-weight:normal;color:var(--burgundy);margin:10px 0}
+.body-copy{font-size:15px;line-height:1.9;color:#6c3a35;max-width:370px;margin:16px auto}
+.amp{font-size:25px;color:var(--wine);margin:5px}
+.quote{font-size:13px;line-height:1.8;letter-spacing:2px;color:var(--burgundy);margin:25px 0 4px}
+.quote-ref{font:10px Arial,sans-serif;letter-spacing:2px;color:var(--muted)}
+.divider{color:var(--gold);letter-spacing:6px;margin:20px 0}
+.date-box{padding:22px 12px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);margin:24px 0}
+.date-big{font-size:29px;color:var(--burgundy);margin:8px 0}
+.date-small{font:12px Arial,sans-serif;letter-spacing:2px;color:var(--muted)}
+.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:18px 0 10px}
+.time-unit{border:1px solid #c5a779;background:#fff8ef;padding:14px 3px 12px}
+.time-unit strong{display:block;font:26px Arial,sans-serif;color:var(--burgundy)}
+.time-unit span{display:block;font:9px Arial,sans-serif;letter-spacing:1px;color:var(--muted);margin-top:7px;text-transform:uppercase}
+.venue{background:#ead8c7;border:1px solid #c5a779;padding:24px 15px;margin-top:25px}
+.venue-icon{font-size:28px;color:var(--burgundy)}
+.venue p{font-size:14px;line-height:1.8}
+.map-btn{margin-top:12px}
+.footer{padding:22px 8px;text-align:center;line-height:1.8}
+.footer .family{font-size:25px;color:var(--burgundy);font-style:italic}
+.footer small{font:10px Arial,sans-serif;letter-spacing:2px;color:var(--muted)}
+.cover-leaving{opacity:0;transform:scale(1.03);pointer-events:none}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shimmer{0%,100%{opacity:.75}50%{opacity:1}}
+.floral{animation:shimmer 4s ease-in-out infinite}
+@media(max-width:380px){.main{padding:16px 18px 30px}.paper-card{padding:30px 15px}.countdown{gap:4px}.time-unit strong{font-size:22px}.time-unit span{font-size:8px}.cover-frame{padding-left:15px;padding-right:15px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="invite">
+  <section class="cover" id="cover">
+    <div class="cover-frame">
+      <span class="corner tl">❧</span><span class="corner tr">❧</span>
+      <span class="corner bl">❧</span><span class="corner br">❧</span>
+      <div class="floral">✿ ❧ ✿</div>
+      <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+      <p class="kicker">A BEAUTIFUL BEGINNING</p>
+      <h1>You're<br>Invited</h1>
+      <p class="sub">To celebrate a blessed Nikah</p>
+      <div class="ribbon"></div>
+      <div class="seal-row"><div class="seal">❧</div><div class="seal">✿</div></div>
+      <p class="sub" style="margin-top:30px">Danish &amp; Rehnuma</p>
+      <button class="open-btn" id="openBtn">Open Invitation ✦</button>
+    </div>
+  </section>
+
+  <main class="main hidden" id="mainInvite">
+    <section class="paper-card">
+      <div class="floral">✿ ❧ ✿</div>
+      <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+      <p class="body-copy">With the blessings of Allah,<br>we joyfully invite you to the Nikah ceremony of</p>
+      <h2>Danish<br>Mansuri</h2>
+      <div class="amp">&amp;</div>
+      <h2>Rehnuma</h2>
+      <div class="divider">──── ♡ ────</div>
+      <p class="quote">“AND WE CREATED<br>YOU IN PAIRS.”</p>
+      <p class="quote-ref">QURAN [78:8]</p>
+    </section>
+
+    <section class="paper-card">
+      <div class="floral">❧ ✿ ❧</div>
+      <p class="kicker">SAVE THE DATE</p>
+      <h2 style="font-size:clamp(38px,10vw,54px)">Save<br>The Date</h2>
+      <div class="date-box">
+        <p class="date-big">18 · 11 · 2026</p>
+        <p class="date-small">WEDNESDAY · 3:00 PM IST</p>
+      </div>
+      <p class="body-copy">A new chapter, a lifetime of love,<br>and a day made more beautiful with you.</p>
+      <p class="kicker">COUNTING DOWN TO THE NIKAH</p>
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="time-unit"><strong id="days">--</strong><span>Days</span></div>
+        <div class="time-unit"><strong id="hours">--</strong><span>Hours</span></div>
+        <div class="time-unit"><strong id="minutes">--</strong><span>Minutes</span></div>
+        <div class="time-unit"><strong id="seconds">--</strong><span>Seconds</span></div>
+      </div>
+    </section>
+
+    <section class="paper-card">
+      <div class="floral">✿ ❧ ✿</div>
+      <p class="kicker">WITH LOVE &amp; DUAS</p>
+      <h2 style="font-size:36px">Join Us</h2>
+      <div class="venue">
+        <div class="venue-icon">⌖</div>
+        <h3>Our Nikah Venue</h3>
+        <p><strong>Neem Chok, Kayampur</strong><br>District Mandsaur, Madhya Pradesh</p>
+        <a class="map-btn" href="https://maps.app.goo.gl/KXPjCcB1zY2JxA9EA" target="_blank" rel="noopener noreferrer">GET EXACT DIRECTIONS ↗</a>
+      </div>
+      <div class="divider">✦ ❈ ✦</div>
+      <p class="body-copy">Your presence and duas will make our special day even more memorable.</p>
+      <p class="family">Mansuri Family</p>
+      <small>WITH LOVE, PRAYERS &amp; BLESSINGS</small>
+      <div class="floral" style="margin-top:22px">❧ ✿ ❧</div>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+  const cover = document.getElementById('cover');
+  const main = document.getElementById('mainInvite');
+  document.getElementById('openBtn').addEventListener('click', function(){
+    cover.classList.add('cover-leaving');
+    window.setTimeout(function(){
+      cover.classList.add('hidden');
+      main.classList.remove('hidden');
+      main.scrollIntoView({behavior:'smooth',block:'start'});
+    },650);
+  });
+
+  // 18 November 2026 at 3:00 PM India Standard Time
+  const target = new Date('2026-11-18T15:00:00+05:30').getTime();
+  const countdown = document.getElementById('countdown');
+  let timer;
+
+  function updateCountdown(){
+    const diff = target - Date.now();
+    if(diff <= 0){
+      clearInterval(timer);
+      countdown.innerHTML = '<p style="grid-column:1/-1;color:#6e2027;line-height:1.8">Nikah Mubarak! May Allah bless this beautiful union.</p>';
+      return;
+    }
+    const vals = {
+      days: Math.floor(diff / 86400000),
+      hours: Math.floor((diff % 86400000) / 3600000),
+      minutes: Math.floor((diff % 3600000) / 60000),
+      seconds: Math.floor((diff % 60000) / 1000)
+    };
+    Object.keys(vals).forEach(k => document.getElementById(k).textContent = vals[k]);
+  }
+  updateCountdown();
+  timer = setInterval(updateCountdown,1000);
+})();
+</script>
+</body>
+</html>
